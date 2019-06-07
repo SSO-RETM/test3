@@ -8,6 +8,11 @@ pipeline {
                         name: 'PARAM_ENV_DEPLOY')
             }
     stages {
+        stage ('Echo File-test3'){
+            steps{
+                echo 'file-test3'
+            }
+        }
         stage('Build') {
             when {
                 expression { params.PARAM_ENV_DEPLOY == 'DEV' }
